@@ -1,0 +1,63 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,800&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'poppins';
+	box-sizing: border-box;
+}
+body{
+	height: 100vh;
+	width: 100%;
+/*	background-color: cadetblue;*/
+	background: url('https://img.freepik.com/premium-vector/seamless-dog-pattern-with-paw-prints-bones-hearts-balls-cat-foot-texture-pattern-with-doggy-pawprint-bones-dog-texture-hand-drawn-vector-illustration-doodle-style-white-background_192280-1320.jpg?w=1380') no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.header{
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgb(0, 255, 255,.1);
+	backdrop-filter: blur(3px);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom: 1px solid #fff;
+	width: 100%;
+	padding: 20px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header a{
+	color:rgb(0, 0, 0);
+/*	??*/
+	text-transform: capitalize;
+	
+}
+.header .logo{
+	text-decoration: none;
+	font-size: 32px;
+	font-weight: 700;
+}
+.header .navbar a{
+	margin-left: 40px;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+	position: relative;
+}
+.navbar a::before{
+	content:"";
+	position: absolute;
+	top:100%;
+	left: 0;
+	height: 2px;
+	background: rgb(0, 0, 0);
+	width: 00%;
+	transition:.3s;
+	
+}
+.navbar a:hover::before{
+	width: 100%;
+}

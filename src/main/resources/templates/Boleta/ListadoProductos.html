@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+table {
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+		<h1  align="center">	
+			Listado de Productos
+		</h1>
+		
+		<h2 align="center">
+			<a th:href="@{RegistrarProducto}">
+				Registra Nuevos Productos
+			</a>
+		</h2>
+		
+		<table align="center">
+			<tr>
+				<th>Codigo Producto</th>
+				<th>Nombre Producto</th>
+				<th>Precio Venta</th>
+				<th>Stock  Producto</th>			
+				<th>Precio Compra</th>
+				<th>Estado Producto</th>
+				<th>Descripcion</th>
+				<th colspan="2">Accciones</th>
+			</tr>
+			<th:block th:each="p:${listaProducto}"></th>
+			<tr>
+				<td th:text="${p.idProducto}"></td>
+				<td th:text="${p.nombre}"></td>
+				<td th:text="${p.precioVenta}"></td>
+				<td th:text="${p.stock}"></td>
+				<td th:text="${p.precioCompra}"></td>
+				<td th:text="${p.estado}"></td>
+				<td th:text="${p.descripcion}"></td>
+				<td> <a th:href="@{Actualizar/}+${p.idProducto}" th:text="Actualizar"></a></td>
+				<td> <a th:href="@{Eliminar/}+${p.idProducto}" th:text="Eliminar"></a></td>
+				<td> </td>
+			</tr>
+			</th:block>
+		</table>
+</body>
+</html>
